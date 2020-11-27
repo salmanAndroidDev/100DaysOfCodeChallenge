@@ -1,4 +1,17 @@
-pre_start = "****************** Welcome to Samrt BMI!!! ************************"
+pre_start = """"
+****************** Welcome to Samrt BMI!!! ************************
+                    *********       **                   **    ************
+                    *       *       *  *                * *         *  
+                    *        *      *   *              *  *         *
+                    *      *        *    *            *   *         *
+                    *   *           *     *          *    *         *
+                    * *             *      *        *     *         *
+                    *   *           *       *      *      *         *  
+                    *     *         *        *    *       *         *
+                    *       *       *         *  *        *         *
+                    *        *      *           *         *         *
+                    **********      *                     *    ************
+"""
 
 print(pre_start)
 height = float(input("Insert Your Height In Meter: "))
@@ -17,7 +30,7 @@ elif 18.5 <= BMI and BMI < 25 :
 elif 25 <= BMI and BMI <= 30:
     bmi_state = 'over weight'
 
-elif BMI < 30:
+elif BMI > 30:
     bmi_state = 'obese'
 
 
@@ -25,11 +38,12 @@ pre_result = """
 ******************************************************************
 ******************* Result ***************************************
 """
-print(pre_result)
-
+message = ""
 if bmi_state is 'normal':
-    print("your BMI is ", BMI , ' which means you are in the best shape!')
+    message = f"your BMI is {round(BMI, 2)} which means you are in the best shape!"
 elif BMI > 25:
-    print('Your state is ', bmi_state, 'Your ideal weight is ', ideal_weight, ' try to lose ', weight - ideal_weight, 'killos')
+    message = f'Your state is {bmi_state} Your ideal weight is {round(ideal_weight, 2)} try to lose {round(weight - ideal_weight, 2)} killos'
 else:
-    print('Your state is ', bmi_state, 'Your ideal weight is ', ideal_weight, ' try to gain ', (ideal_weight - weight), 'killos')
+    message = f'Your state is  {bmi_state} Your ideal weight is  {round(ideal_weight, 2)} try to gain {round(ideal_weight - weight, 2)} killos'
+
+print(pre_result, message)
